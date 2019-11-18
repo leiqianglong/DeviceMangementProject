@@ -1,0 +1,34 @@
+<view class="index">
+  <!-- 顶部搜索框父view -->
+  <view class="index-hd">
+    <!-- 搜索栏 -->
+    <view class="page-search">
+      <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
+  </view>
+  <!-- 列表父view -->
+  <view class="index-bd">
+    <view class="kind-list">
+      <!-- 一级标题 -->
+      <block wx:for-items="{{list}}" wx:key="{{item.type}}">
+        <view class="kind-list-item">
+          <view id="{{item.type}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.firstName}}</view>
+            <image class="kind-list-img" src="../../images/view{{item.type}}.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <!-- 二级标题 -->
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <view bindtap="gotoNext" id="{{page.iid}}" class="navigator">
+                  <view class="navigator-text">{{page.secondName}}</view>
+                  <view class="navigator-arrow"></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

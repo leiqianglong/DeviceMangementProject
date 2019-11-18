@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mp-searchbar": "../common/weui-miniprogram/searchbar/searchbar"
+  },
+
+ "navigationBarTitleText": "云管·科研耗材管理"
+}

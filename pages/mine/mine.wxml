@@ -1,0 +1,12 @@
+<button bindtap="addBtn">
+      增
+</button>
+<button bindtap="deleteBtn">
+      删
+</button>
+<button bindtap="fixBtn">
+      改
+</button>
+<button bindtap="scanleBtn">
+      查
+</button>

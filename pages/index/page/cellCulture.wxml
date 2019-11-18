@@ -1,0 +1,37 @@
+<view class="goods" wx:if="{{status==0||item.status==status}}">
+<!-- 左侧item列表 -->
+  <view class="menu-wrapper">
+    <scroll-view scroll-y="true" style="height: 100%;">
+      <view wx:for="{{navList}}" class="menu-item border-1px" bindtap="selectMenu" data-item-index="{{index}}" wx:key="{{item}}">
+        <view class="text {{index === currentActiveIndex ? 'menu-active' : ''}}">
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 右侧物品列表 -->
+  <scroll-view scroll-y="true" scroll-into-view="{{toView}}" class="foods-wrapper">
+    <view wx:for="{{item}}" class="food-list" wx:for-index="parentIndex" wx:key="key">
+      <view id="order{{parentIndex}}" class="title">{{item.item_name}}</view>
+       <view class='goods-box' wx:for-item='items' wx:for="{{item.list}}" wx:key="unique">
+          <image class='goodsImg' src='{{items.url}}'></image>
+          <!-- <view class='goodsName'>{{items.goodsName}}</view> -->
+          <view class='goodsName'>库存：100</view>
+          <view class='goodsName'>NO：10033</view>
+      </view>
+
+      <!-- <scroll-view scroll-x="true">
+        <view class="scroll-view-y">
+          <view wx:for="{{item.list}}" class="food-item" wx:for-item="food" bindtap="selectList" data-food="{{food}}" wx:key="key">
+            <view class="icon">
+              <image src="{{food.url}}" style="width: 57px;height: 57px" data-id="{{food.icon}}"></image>
+            </view>
+            <view class="content">
+              <view class="name">{{food.goodsName}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view> -->
+    </view>
+  </scroll-view>
+</view>
