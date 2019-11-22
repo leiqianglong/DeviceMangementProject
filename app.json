@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/mine/mine",
+    "pages/scanner/scanner",
     "pages/index/page/cellCulture"
   ],
   "window": {
@@ -15,6 +16,12 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
+        "iconPath": "images/icon_API.png",
+        "selectedIconPath": "images/icon_API_HL.png"
+      },
+      {
+        "pagePath": "pages/scanner/scanner",
+        "text": "扫码",
         "iconPath": "images/icon_API.png",
         "selectedIconPath": "images/icon_API_HL.png"
       },

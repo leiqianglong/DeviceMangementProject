@@ -1,0 +1,1 @@
+<button class="scanle_btn" bindtap="scanleBtnClick">扫二维码</button>

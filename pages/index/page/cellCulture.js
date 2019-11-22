@@ -14,7 +14,7 @@ Page({
 
   selectMenu: function (e) {
     var index = e.currentTarget.dataset.itemIndex;
-
+    var _this = this;
     console.log(index)
     const _ = db.command
     if (db) {
@@ -22,14 +22,15 @@ Page({
         // or 方法用于指定一个 "或" 条件，此处表示需满足 _.eq(0) 或 _.eq(100)
         type: _.eq(1),
         state: _.eq(0)
-      }).count({
-        success: function (res) {
-          console.log('查询到了符合条件的数据是：' + res.total)
+      }).get({
+        success:function(res){
+          _this.setData({
+            producteds: res.data
+          })
+          console.log('查询到了符合条件的数据是：' + res.data)
         }
       })
     }
-
-
 
     // //当前选中的下标赋值
     if (Number(index) === this.data.currentActiveIndex) return
